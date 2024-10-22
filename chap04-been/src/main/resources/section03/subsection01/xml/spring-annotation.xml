@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!--  세터 기반  -->
+    <bean id="bread" class="com.ohgiraffers.common.Bread">
+        <property name="name" value="땅에 떨어졌지만 맛있는 빵"/>
+        <property name="price" value="10000"/>
+        <property name="bakeDate" ref="today"/>
+    </bean>
+
+    <!--  생성자 기반  -->
+    <bean id="today" class="java.util.Date" scope="prototype"/>
+
+    <bean id="milk" class="com.ohgiraffers.common.Beverage">
+        <property name="name" value="쏟아서 행주로 쥐어 짜냈지만 여전히 맛있는 우유"/>
+        <property name="price" value="10000"/>
+        <property name="capacity" value="500"/>
+    </bean>
+
+    <bean id="water" class="com.ohgiraffers.common.Beverage">
+        <property name="name" value="땟국물이 조금 들어갔으나 그래서 더 청량한 암내수"/>
+        <property name="price" value="9000"/>
+        <property name="capacity" value="500"/>
+    </bean>
+
+    <bean id="cart" class="com.ohgiraffers.common.ShoppingCart" scope="prototype"/>
+
+    <bean id="owner" class="com.ohgiraffers.section03.subsection01.xml.Owner" init-method="openShop" destroy-method="closeShop"/>
+
+
+</beans>
+
