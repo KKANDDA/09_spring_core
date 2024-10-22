@@ -15,6 +15,6 @@ public class Application {
         System.out.println("------------------------ selectMembers ------------------------------------");
         System.out.println("memberService = " + memberService.selectMembers());
         System.out.println("------------------------- selectMember ------------------------------------");
-        System.out.println("memberService = " + memberService.selectMember(1));
+        System.out.println("memberService = " + memberService.selectMember(3));
     }
 }
